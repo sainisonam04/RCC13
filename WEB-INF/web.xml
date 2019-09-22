@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AlertServlet</servlet-name>
+    <servlet-class>com.rcc.web.AlertServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CriminalServlet</servlet-name>
+    <servlet-class>com.rcc.web.CriminalServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FeedbackServlet</servlet-name>
+    <servlet-class>com.rcc.web.FeedbackServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MissingServlet</servlet-name>
+    <servlet-class>com.rcc.web.MissingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>VehicleServlet</servlet-name>
+    <servlet-class>com.rcc.web.VehicleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>loginvalid</servlet-name>
+    <servlet-class>com.rcc.web.loginvalid</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AlertServlet</servlet-name>
+    <url-pattern>/servlet/alert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CriminalServlet</servlet-name>
+    <url-pattern>/servlet/criminal</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FeedbackServlet</servlet-name>
+    <url-pattern>/servlet/feedback</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MissingServlet</servlet-name>
+    <url-pattern>/servlet/missing</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VehicleServlet</servlet-name>
+    <url-pattern>/servlet/vehicle</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginvalid</servlet-name>
+    <url-pattern>/servlet/loginvalid</url-pattern>
+  </servlet-mapping>
+  <security-constraint>
+  <web-resource-collection>
+  <web-resource-name>Alert</web-resource-name>
+  <url-pattern>/servlet/alert</url-pattern>
+  <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+  <role-name>Admin</role-name>
+  </auth-constraint>
+  <user-data-constraint>
+  <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+  </user-data-constraint>
+  </security-constraint>	
+  <security-role>
+  <role-name>Admin</role-name>
+  </security-role>
+  <error-page>
+  <exception-type>java.lang.Throwable</exception-type>
+  <location>/exception_page.html</location>
+  </error-page>
+  <error-page>
+  <error-code>404</error-code>
+  <location>/error_404.html</location>
+  </error-page>
+  <error-page>
+  <error-code>403</error-code>
+  <location>/error_403.html</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
